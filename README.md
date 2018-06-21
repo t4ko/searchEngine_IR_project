@@ -6,16 +6,18 @@ This project is a good example of "reinvent the wheel but make it octogonal" sin
 
 This web search ranks the result for a given query in 2 steps:
 - Compute a BM25 score and select the top 20 results
-- Rerank the results by PageRank scores and select the top 10 results
-Only 10 results are given to a query to easily assess relevance of a document to a query.
+- Rerank the results by PageRank scores and select the top 10 results. Only 10 results are given to a query to easily assess relevance of a document to a query.
+
 The relevance scores were assigned manually in 3 level :
 - 0: no word from the query (should not happen)
 - 1: contain words from the query but is irrelevant
 - 2: words from the query and relevant content
 
+
 Usage :
 Tune the parameters in searchEngine.py to adjust the crawling
 To start the search engine just run searchEngine.py
+
 
 Limitations :
 - The structure of this program is strange since it was initially designed to be realistic and able to run as a pipe for information but it was limited to match the needs of a class final project. The modules (crawler, indexer and query engine) run in separate processes started from searchEngine. It could in theory crawl documents continuously and index them in batches.
